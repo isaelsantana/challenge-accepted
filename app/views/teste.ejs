@@ -10,7 +10,7 @@
         
             <div class="container" >
 
-                <h1>Previsão do tempo em <%=clima.locale.name%> - <%=clima.locale.state%> </h1>
+                <h1>PrevisÃ£o do tempo em <%=clima.locale.name%> - <%=clima.locale.state%> </h1>
 
                     <%for (var i = 0; i< clima.weather.length; i++) {%>
 
@@ -19,20 +19,27 @@
                             <h4 class="card-title"><%=clima.weather[i].date %></h4>
                             <p class="card-text"><%=clima.weather[i].text %></p>
                             <div class="row">
-                                <div class="col md-6">
+                                <div class="col md-6" style="
+                                padding-bottom: 10px;
+                            ">
+                                    <img src="public/images/icons/upload.png" alt="">
                                     <%=clima.weather[i].temperature.max + '°C'%>
                                 </div>
+                                
                                 <div class="col md-6">
+                                        <img src="public/images/icons/download.png" alt="">
                                         <%=clima.weather[i].temperature.min  +'°C' %>
                                 </div>
                             </div> 
 
                             <div class="row">
                                 <div class="col md-6">
+                                    <img src="public/images/icons/protection-symbol-of-opened-umbrella-silhouette-under-raindrops.png" alt="">
                                     <%=clima.weather[i].rain.probability %>
                                     
                                 </div>
                                 <div class="col md-6">
+                                    <img src="public/images/icons/raindrop-close-up.png" alt="">
                                     <%=clima.weather[i].rain.precipitation %>
                                 </div>
                             </div> 

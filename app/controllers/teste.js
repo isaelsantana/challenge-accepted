@@ -19,4 +19,4 @@ module.exports.getObjeto = function(req , res){
             res.send('<h1>Nenhuma cidade encontrada</h1>');
         }
     });
-}
+};

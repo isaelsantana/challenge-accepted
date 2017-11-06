@@ -12,6 +12,8 @@ app.use(bodyParser.urlencoded({ extended : true }));
 app.use(bodyParser.json());
 app.use(expressValidator());
 
+app.use('/public',express.static('./app/public'));
+
 consign()
 .include('app/routes')
 .then('app/models')

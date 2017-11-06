@@ -10,23 +10,34 @@
         
             <div class="container" >
 
-                <h1><%=clima.locale.name%></h1>
-
-                <table border="1">
-                    <tr>
-                        <th>Data</th>
-                        <th>Texto</th>
-                        <th>temperatura</th>
-                        <th>rain</th>
-                    </tr>
+                <h1>Previsão do tempo em <%=clima.locale.name%> - <%=clima.locale.state%> </h1>
 
                     <%for (var i = 0; i< clima.weather.length; i++) {%>
-                    <tr>
-                        <td><%=clima.weather[i].date %></td>
-                        <td><%=clima.weather[i].text %></td>
-                        <td><%=clima.weather[i].temperature.max %></td>
-                        <td><%=clima.weather[i].rain.probability %></td>
-                    </tr>
+
+                    <div class="card" style="width: 40rem;">
+                        <div class="card-body">
+                            <h4 class="card-title"><%=clima.weather[i].date %></h4>
+                            <p class="card-text"><%=clima.weather[i].text %></p>
+                            <div class="row">
+                                <div class="col md-6">
+                                    <%=clima.weather[i].temperature.max + '°C'%>
+                                </div>
+                                <div class="col md-6">
+                                        <%=clima.weather[i].temperature.min  +'°C' %>
+                                </div>
+                            </div> 
+
+                            <div class="row">
+                                <div class="col md-6">
+                                    <%=clima.weather[i].rain.probability %>
+                                    
+                                </div>
+                                <div class="col md-6">
+                                    <%=clima.weather[i].rain.precipitation %>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
                     <%}%>
                 </table>
 

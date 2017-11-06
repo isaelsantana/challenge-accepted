@@ -2,21 +2,21 @@ var fs = require('fs');
 module.exports.getObjeto = function(req , res){
     fs.readFile('././base/weather.json', 'UTF-8' , function(err ,data){
         if(err) throw err;
-
+        var clima;
         name = req.query.name;
     
         data  = JSON.parse(data);
         for( var i = 0; i< data.length ; i++){
 
             if(data[i].locale.name == name){
-                data =  data[i];
-            }else 
-            {
-                data = data[0];
+                clima =  data[i];
             }
         }
 
-        console.log(data);
-        res.render('teste' , {clima : data});
+        if(clima){
+            res.render('teste' , {clima : clima});
+        }else{  
+            res.send('<h1>Nenhuma cidade encontrada</h1>');
+        }
     });
 }

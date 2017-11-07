@@ -1,6 +1,6 @@
 var app = require('./config/server');
 
 
-app.listen(3000, function(){
-    console.log("Servidor ligado porta 3000");
+app.listen(3001, function(){
+    console.log("Servidor ligado porta 3001");
 });

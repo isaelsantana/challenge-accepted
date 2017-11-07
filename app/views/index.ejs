@@ -11,16 +11,17 @@
         
             <div class="container" align="center">
                 <div class="row col-md-5 col-xs-5 col-md-offset-2">
-                        <form>
+                        <form method="post" action="/index">
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Pesquisar">
+                                <input type="text" class="form-control" name="cidade" placeholder="Pesquisar">
                                 <div class="input-group-btn">
                                 <button class="btn btn-default" type="submit">
                                     <img src="public/images/icons/search.png" alt="">
                                 </button>
                                 </div>
                             </div>
-                        </form> 
+                        </form>
+                    <%if (contemInformacao) {%> 
                     <h1>Previsão do tempo em <%=clima.locale.name%> - <%=clima.locale.state%> </h1>
 
                         <%for (var i = 0; i< clima.weather.length; i++) {%>
@@ -57,7 +58,7 @@
                             </div>
                         </div>
                         <%}%>
-                    </table>
+                   <%}%>
                 </div>
             </div>
     </body>
